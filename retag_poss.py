@@ -78,8 +78,8 @@ for sent_list in tagged_sents[retagged_count:tagged_count]:
     # Some sentences have more than one token of one,
     # so we need to retag each token.
     for token in range(1, len(sent)): #Start from index 1 b/c we only want tokens after possessives
-        if sent[token][0].lower() in ['one', 'ones']:# and \
-            #sent[token - 1][1] in ['DPS', 'POS']:
+        if sent[token][0].lower() in ['one', 'ones'] and \
+            sent[token - 1][1] in ['DPS', 'POS']:
             # Print the sentence and context:
             detag_print(sent, context, token)
             
